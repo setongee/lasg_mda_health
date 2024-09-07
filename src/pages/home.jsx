@@ -12,7 +12,7 @@ import prof from '../assets/prof.jpg'
 
 import Newsroom from '../components/newsroom/newsroom'
 import YoutubeSocials from '../components/youtubePlayer/YoutubeSocials'
-import Footer from '../components/footer/footer'
+import Footer from '../components/footer/footerArea'
 
 export default function Home() {
 

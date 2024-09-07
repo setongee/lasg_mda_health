@@ -2,7 +2,6 @@ import React,{useState, useEffect} from 'react'
 import './footer.scss'
 import { ArrowUpRight, FacebookTag, Instagram, Linkedin, Mail, MapPin, Phone, X, Youtube } from 'iconoir-react'
 import Container from '../container/Container'
-import { BsEnvelope } from 'solid-icons/bs';
 
 export default function Footer() {
 
