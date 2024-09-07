@@ -5,7 +5,7 @@ import './styles/styles.scss'
 
 import './font.css'
 
-import Header from './components/header/header'
+import Header from './components/header/Header'
 import { Outlet, redirect, useLocation } from "react-router-dom";
 import Rrs from './components/rrs/Rrs'
 
