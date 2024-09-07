@@ -263,14 +263,14 @@
 
             .topPart{
 
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 30px;
+
                 h1{
                     font-size: 50px;
 
                 }
-
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 30px;
             }
 
             .linksPart{
@@ -318,6 +318,10 @@
 
             .topPart{
 
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 30px;
+
                 h1{
                     font-size: 55px;
                     display: block;
@@ -329,10 +333,6 @@
                     }
                     
                 }
-
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 30px;
             }
 
             .linksPart{
@@ -385,6 +385,11 @@
         .footerContent{
 
             .topPart{
+                
+
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 30px;
 
                 h1{
                     font-size: 50px;
@@ -398,9 +403,6 @@
                     
                 }
 
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 30px;
             }
 
             .linksPart{
