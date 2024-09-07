@@ -1,0 +1,106 @@
+.title{
+    margin-bottom: 5px;
+}
+
+.blog{
+    font-weight: 600;
+    font-size: 35px;
+    font-family: "Bebas Neue" !important;
+}
+
+.news{
+
+    margin-top: 40px;
+    gap: 30px;
+
+    .news__item{
+
+        width: 370px;
+        min-width: 370px;
+        background-color: #fff;
+        box-shadow: 2px 3px 20px rgba($color: #000000, $alpha: .05);
+        border-radius: 7px;
+        // border: 1px solid #eee;
+        overflow: hidden;
+        padding-bottom: 20px;
+        cursor: pointer;
+
+        &:hover{
+
+            .content__text{
+                p{
+                    text-decoration: underline;
+                }
+            }
+
+        }
+
+        a{
+            color: #fb8b24;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 25px;
+            font-weight: 700;
+            transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+            &:hover{
+                gap: 10px;
+            }
+        }
+
+        .photo{
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .content__text{
+            margin-top: 10px;
+            padding: 10px 25px;
+
+            p{
+                line-height: 23px;
+                margin-bottom: 15px;
+                height: 65px;
+            }
+        }
+    }
+}
+
+.newsroom{
+    padding-bottom: 50px;
+    margin: 30px 0;
+    overflow-x: hidden;
+}
+
+.controls__btn{
+
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.prev{
+        background-color: #ebf1ec;
+        color: #3a5a40;
+    }
+
+    &.next{
+        background-color: #3a5a40;
+        color: #fff;
+    }
+
+}
