@@ -8,6 +8,7 @@ import './font.css'
 import Header from './components/header/Header'
 import { Outlet, redirect, useLocation } from "react-router-dom";
 import Rrs from './components/rrs/Rrs'
+import Footer from './components/footer/footerArea'
 
 export default function App() {
 

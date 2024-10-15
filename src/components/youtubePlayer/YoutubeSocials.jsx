@@ -16,6 +16,13 @@ const opts = {
     },
 };
 
+const socials = {
+    twitter : '#',
+    facebook : '#',
+    youtube : '#',
+    instagram : '#'
+}
+
   return (
 
     <div className="socials__skin flex flex__column gap__30">
@@ -25,10 +32,10 @@ const opts = {
         <div className="other__socials flex flex__column gap__30 margin__top__20 font__weight__600 font__13">
             <div className='text__trend'>Visit some of our social media profiles</div>
             <div className="social__tabs flex gap__50">
-                <div className="social__icons"><img src={twitter} alt="" /></div>
-                <div className="social__icons"><img src={facebook} alt="" /></div>
-                <div className="social__icons"><img src={youtube} alt="" /></div>
-                <div className="social__icons"><img src={instagram} alt="" /></div>
+                <a href={socials.twitter} target='_blank' className="social__icons"><img src={twitter} alt="" /></a>
+                <a href={socials.facebook} target='_blank' className="social__icons"><img src={facebook} alt="" /></a>
+                <a href={socials.youtube} target='_blank' className="social__icons"><img src={youtube} alt="" /></a>
+                <a href={socials.instagram} target='_blank' className="social__icons"><img src={instagram} alt="" /></a>
             </div>
         </div>
 

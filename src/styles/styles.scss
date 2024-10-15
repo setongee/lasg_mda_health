@@ -77,13 +77,6 @@
     }
 }
 
-.image__standard{
-    width: 45%;
-    min-width: 600px;
-    overflow: hidden;
-    background-color: red;
-}
-
 .imageXshift{
     margin-left: -55px;
 }
@@ -102,6 +95,10 @@
 .text__trend{
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+.font__11{
+    font-size: 11px;
 }
 
 .font__12{
@@ -161,6 +158,11 @@
 // button
 .button__main{
     background-color: #3A5A40;
+    color: #fff;
+}
+
+.button__primary{
+    background-color: #108a00;
     color: #fff;
 }
 
@@ -328,16 +330,6 @@
 
 .width__700{
     width: 700px;
-}
-
-// active states
-.current{
-    
-    border-bottom: 2px solid #fb8b24;
-
-    a{
-        color: #fb8b24;
-    };
 }
 
 // content styles

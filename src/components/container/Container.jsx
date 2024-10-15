@@ -1,5 +1,6 @@
 import React from 'react'
 import './container.scss'
+import '../../styles/styles.scss'
 
 export default function Container(props) {
   return (
