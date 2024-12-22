@@ -38,10 +38,10 @@ export default function Footer() {
 
                 <div className="socialsIcon flex">
 
-                  <a target = '_blank' href='https://www.instagram.com/lagosstategovt/?hl=en' className="icon"><Instagram width={22} strokeWidth={1.6}/></a> 
-                  <a target = '_blank' href = 'https://x.com/followlasg' className="icon"><X width={22} strokeWidth={1.6}/></a>
-                  <a target = '_blank' href='https://web.facebook.com/followlasg' className="icon"><FacebookTag width={22} strokeWidth={1.6}/></a>
-                  <a target = '_blank' href='https://www.linkedin.com/company/lagosstategovernment/?originalSubdomain=ng' className="icon"><Linkedin width={22} strokeWidth={1.6}/></a> 
+                  <a target = '_blank' href='https://www.instagram.com/lagoshealth/' className="icon"><Instagram width={22} strokeWidth={1.6}/></a> 
+                  <a target = '_blank' href = 'https://twitter.com/LSMOH' className="icon"><X width={22} strokeWidth={1.6}/></a>
+                  <a target = '_blank' href='https://web.facebook.com/lsmoh' className="icon"><FacebookTag width={22} strokeWidth={1.6}/></a>
+                  <a target = '_blank' href='https://www.instagram.com/lagoshealth/' className="icon"><Youtube width={22} strokeWidth={1.6}/></a> 
 
                 </div>
 
@@ -88,53 +88,15 @@ export default function Footer() {
 
                       <div className="linkHeader thick_500">About MOH</div>
 
-                      <div className="links a-dark flex flex__column">
+                      <div className="links a-dark flex sublime">
 
-                          <a target = '_blank' href="/government/elected_officials/governor/view" className="link"> <span><ArrowUpRight/></span> Our Vision & Mission </a>
+                          <a target = '_blank' href="/about/vision" className="link"> <span><ArrowUpRight/></span> Our Vision & Mission </a>
 
-                          <a target = '_blank' href="/government/mdas/all" className="link"> <span><ArrowUpRight/></span> Responsibilities </a>
+                          <a target = '_blank' href="/about/responsibilities" className="link"> <span><ArrowUpRight/></span> Responsibilities </a>
 
-                          <a target = '_blank' href="https://lagoshouseofassembly.gov.ng/home/our-team/" className="link"> <span><ArrowUpRight/></span> Top Management  </a>
+                          <a target = '_blank' href="/about/people" className="link"> <span><ArrowUpRight/></span> Top Management  </a>
 
-                          <a target = '_blank' href="https://lagosjudiciary.gov.ng/directories.html#directories" className="link"> <span><ArrowUpRight/></span> Agencies </a>
-
-                          <a target = '_blank' href="https://registration.lagosresidents.gov.ng/register/" className="link"> <span><ArrowUpRight/></span> Directorates & Units </a>
-
-                      </div>
-
-                  </div>
-
-
-                  <div className="linkHolder flex flex__column">
-
-                      <div className="linkHeader thick_500">Hospitals</div>
-
-                      <div className="links a-dark flex flex__column">
-
-                          <a target = '_blank' href="/services/jobs" className="link"> <span><ArrowUpRight/></span> Tertiary </a>
-
-                          <a target = '_blank' href="/services/housing" className="link"> <span><ArrowUpRight/></span> Secondary </a>
-
-                          <a target = '_blank' href="/services/tourism" className="link"> <span><ArrowUpRight/></span> Primary </a>
-
-                      </div>
-
-                  </div>
-
-
-                  <div className="linkHolder flex flex__column">
-
-                      <div className="linkHeader thick_500"> Quick Services </div>
-
-                      <div className="links a-dark flex flex__column">
-
-                          <a target = '_blank' href="https://lagos.npf.gov.ng/home/find/division" className="link"> <span><ArrowUpRight/></span> Find police stations </a>
-
-                          <a target = '_blank' href="https://lagos.npf.gov.ng/news/post/3" className="link"> <span><ArrowUpRight/></span> Report missing person </a>
-
-                          <a target = '_blank' href="https://citizensgate.lagosstate.gov.ng/" className="link"><span><ArrowUpRight/></span> Make complaints </a>
-
-                          <a target = '_blank' href="/services/jobs" className="link"> <span><ArrowUpRight/></span> Work in Lagos </a>
+                          <a target = '_blank' href="/about/agencies_directorates_units" className="link"> <span><ArrowUpRight/></span> Agencies </a>
 
                       </div>
 

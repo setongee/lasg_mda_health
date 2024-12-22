@@ -1,5 +1,89 @@
 .homepage{
 
+    .commissionerCorner{
+
+        margin: 70px 0;
+        overflow: clip;
+    
+        .corner{
+    
+            justify-content: space-between;
+            align-items: center;
+    
+            .photoChance{
+                width: 600px;
+                height: 550px;
+                position: relative;
+    
+                .boxChance{
+                    width: 100%;
+                    height: 450px;
+                    background-color: #F9F9FB;
+                }
+    
+                .photoCom{
+                    height: 470px;
+                    width: 450px;
+                    overflow: hidden;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+    
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+    
+            .speech{
+    
+                width: 45%;
+    
+                .who{
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-size: 11px;
+                    font-weight: 600;
+                    margin-bottom: 30px;
+                    color: #444;
+    
+                    span{
+                        color: #00B44E;
+                        font-weight: 700;
+                    }
+                }
+    
+                .speech__title{
+                    font-size: 40px;
+                    width: 100%;
+                    font-weight: 600;
+                    line-height: 50px;
+                }
+    
+                .speech__desc{
+                    margin: 30px 0;
+                    width: 70%;
+                    color: #555;
+                    line-height: 26px;
+                }
+    
+                .buttonGrp{
+                    margin-top: 50px;
+                    gap: 15px;
+                }
+            }
+        }
+    }
+
+    .main__zone{
+        .emergence{
+            display: none;
+        }
+    }
+
     .vidMate{
         height: 800px;
         overflow: hidden;
@@ -128,7 +212,7 @@
 
 .socials__comp{
     padding: 0px 0;
-    margin-top: 20px;
+    margin-top: 40px;
 
     .youtube__player__seth{
 
@@ -168,14 +252,6 @@
             img{
                 width: 100%;
             }
-            
-            &:first-child{
-                margin-left: 10%;
-            }
-
-            &:last-child{
-                margin-right: 10%;
-            }
         }
 
     }
@@ -186,6 +262,7 @@
 @media (max-width : 1440px) {
 
     .homepage{
+
         .vidMate{
             height: 700px;
             overflow: hidden;
@@ -206,3 +283,498 @@
     }
 
 }
+
+@media (max-width : 1200px) {
+
+    .homepage{
+        
+        .vidMate{
+            height: 700px;
+            overflow: hidden;
+            position: absolute;
+            width: 1000px;
+            right: -250px;
+            rotate: -30deg;
+            z-index: -1;
+            top: 0px;
+    
+            video{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .commissionerCorner{
+
+            margin-top: 100px;
+
+            .corner{
+
+                .photoChance{
+
+                    .boxChance{
+                        width: 70%;
+                    }
+
+                }
+            }
+        }
+    
+    }
+
+}
+
+@media (max-width : 1000px) {
+
+    .homepage{
+
+        .commissionerCorner{
+
+            margin: 50px 0;
+
+            .corner{
+
+                .photoChance{
+
+                    width: 45%;
+                    height: 520px;
+
+                    .boxChance{
+                        width: 100%;
+                    }
+
+                    .photoCom{
+                        width: 80%;
+                    }
+
+                }
+
+                .speech{
+                    width: 50%;
+
+                    .speech__title{
+                        width: 100%;
+                        font-size: 35px;
+                        line-height: 45px;
+                    }
+
+                    .speech__desc{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        
+        .vidMate{
+            height: 1000px;
+            overflow: hidden;
+            position: absolute;
+            width: 1100px;
+            right: -400px;
+            rotate: -40deg;
+            z-index: -1;
+            top: -150px;
+    
+            video{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .main__text{
+
+            width: 600px;
+            padding: 70px 0;
+    
+            span{
+                color: #108a00;
+            }
+    
+            h1{
+                font-size: 60px;
+                line-height: 67px;
+                letter-spacing: -1.5px;
+            }
+    
+            p{
+                font-size: 17px;
+                line-height: 28px;
+                width: 80%;
+                margin: 50px 0;
+                color: #666;
+            }
+        }
+    
+    }
+
+}
+
+@media (max-width : 800px) {
+
+    .homepage{
+
+        .commissionerCorner{
+
+            margin: 30px 0;
+
+            .corner{
+
+                flex-direction: column;
+
+                .photoChance{
+
+                    width: 500px;
+                    height: 520px;
+
+                    .boxChance{
+                        width: 100%;
+                    }
+
+                    .photoCom{
+                        width: 80%;
+                    }
+
+                }
+
+                .speech{
+
+                    width: 100%;
+                    margin-top: 50px;
+
+                    .speech__title{
+                        width: 100%;
+                        font-size: 35px;
+                        line-height: 45px;
+                    }
+
+                    .speech__desc{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        
+        .vidMate{
+            height: 1000px;
+            overflow: hidden;
+            position: absolute;
+            width: 1000px;
+            right: -450px;
+            rotate: -50deg;
+            z-index: -1;
+            top: -150px;
+        
+            video{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .main__text{
+
+            width: 600px;
+            padding: 70px 0;
+    
+            span{
+                color: #108a00;
+            }
+    
+            h1{
+                font-size: 60px;
+                line-height: 67px;
+                letter-spacing: -1.5px;
+            }
+    
+            p{
+                font-size: 17px;
+                line-height: 28px;
+                width: 80%;
+                margin: 50px 0;
+                color: #666;
+            }
+        }
+
+        .programmes{
+
+            background-color: #f9f9f9;
+            padding: 30px 0px;
+        
+            .programme__parent{
+        
+                overflow-x: auto;
+                scrollbar-width: none;
+                gap: 10px;
+        
+                .programme__item{
+                    min-width: 321px;
+                    height: 500px;
+                    background-color: #eee;
+                    border-radius: 10px;
+                    overflow: hidden;
+        
+                    img{
+                        width: 100%;
+                    }
+                    
+                }
+        
+            }
+        }
+    
+    }
+
+}
+
+@media (max-width : 700px) {
+
+    .homepage{
+
+        .commissionerCorner{
+
+            .corner{
+
+                flex-direction: column;
+
+                .photoChance{
+
+                    width: 500px;
+                    height: 520px;
+
+                    .boxChance{
+                        width: 100%;
+                    }
+
+                    .photoCom{
+                        width: 80%;
+                    }
+
+                }
+
+                .speech{
+
+                    width: 100%;
+                    margin-top: 50px;
+
+                    .speech__title{
+                        width: 100%;
+                        font-size: 35px;
+                        line-height: 45px;
+                    }
+
+                    .speech__desc{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        
+        .vidMate{
+            display: none;
+        }
+
+        .main__text{
+
+            width: 100%;
+            padding: 40px 0;
+    
+            span{
+                color: #108a00;
+            }
+    
+            h1{
+                font-size: 55px;
+                line-height: 62px;
+                letter-spacing: -1.5px;
+            }
+    
+            p{
+                font-size: 18px;
+                line-height: 28px;
+                width: 90%;
+                margin: 35px 0;
+                color: #666;
+            }
+        }
+    
+    }
+
+}
+
+@media (max-width : 500px) {
+
+    .homepage{
+
+        .commissionerCorner{
+
+            .corner{
+
+                flex-direction: column;
+
+                .photoChance{
+
+                    width: 100%;
+                    height: 400px;
+
+                    .boxChance{
+                        width: 100%;
+                        height: 300px;
+                        display: none;
+                    }
+
+                    .photoCom{
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                }
+
+                .speech{
+
+                    width: 100%;
+                    margin-top: 30px;
+
+                    .who{
+                        margin-bottom: 20px;
+                    }
+
+                    .speech__title{
+                        width: 100%;
+                        font-size: 28px;
+                        line-height: 38px;
+                        margin-top: 0;
+                    }
+
+                    .speech__desc{
+                        width: 100%;
+                        margin: 20px 0;
+                    }
+
+                    .buttonGrp{
+                        margin-top: 40px;
+                    }
+                }
+            }
+        }
+
+        .main__zone{
+
+            flex-direction: column;
+
+            .emergence{
+
+                margin-top: 20px;
+                width: 100%;
+                background-color: #fff7edc8;
+                padding: 10px;
+                text-transform: uppercase;
+                font-size: 11px;
+                letter-spacing: 2px;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                font-weight: 600;
+                border-radius: 5px;
+
+                a{
+                    color: #ff6200;
+                }
+
+            }
+        }
+        
+        .main__text{
+
+            width: 100%;
+            padding-bottom: 30px;
+            padding-top: 20px;
+    
+            span{
+                color: #108a00;
+            }
+    
+            h1{
+                font-size: 45px;
+                line-height: 52px;
+                letter-spacing: -1.5px;
+            }
+    
+            p{
+                font-size: 15px;
+                line-height: 25px;
+                width: 100%;
+                margin: 35px 0;
+                color: #666;
+            }
+        }
+
+        .socials__comp{
+        
+            .youtube__player__seth{
+        
+                p{
+                    font-size: 21px;
+                    margin-bottom: 20px;
+                    font-weight: 600;
+                    text-align: center;
+                }
+            }
+        
+        }
+    
+    }
+
+}
+
+@media (max-width : 410px) {
+
+    .homepage{
+        
+        .commissionerCorner{
+
+            .corner{
+
+                flex-direction: column;
+
+                .photoChance{
+
+                    width: 100%;
+                    height: 400px;
+
+                    .boxChance{
+                        width: 100%;
+                        height: 300px;
+                        display: none;
+                    }
+
+                    .photoCom{
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                }
+
+                .speech{
+
+                    width: 100%;
+
+                    .speech__title{
+                        width: 100%;
+                        font-size: 24px;
+                        line-height: 34px;
+                    }
+
+                    .speech__desc{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+    
+    }
+
+}
+

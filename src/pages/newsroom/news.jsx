@@ -10,7 +10,7 @@ export default function News() {
 
         <Container>
 
-            <Newsroom type = 'main' />
+            <Newsroom type = 'main' class = "page" />
 
         </Container>
 

@@ -1,14 +1,16 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import './header.scss'
 import Container from '../container/Container'
 import logo from '../../assets/logo/lasg__logo.png'
 import Button from '../button/Button'
 import { useLocation } from 'react-router-dom'
-import { NavArrowDown } from 'iconoir-react'
+import { FacebookTag, Instagram, Linkedin, Menu, NavArrowDown, Twitter } from 'iconoir-react'
 
 export default function Header() {
 
   var location = useLocation().pathname.split('/')[1];
+  const [show, setShow] = useState(false);
+  const [isDropdown, setIsDropdown] = useState(false);
 
   useEffect(() => {
 
@@ -34,7 +36,20 @@ export default function Header() {
       getnav[0].classList.add('current');
     }
 
+    setShow(false);
+
   }, [location]);
+
+  useEffect(() => {
+    
+    if (show){
+      document.body.parentElement.style.overflow = "hidden"
+    } else{
+     document.body.parentElement.style.overflow = "visible"
+     setIsDropdown(false);
+    }
+    
+  }, [show]);
 
   return (
 
@@ -54,7 +69,7 @@ export default function Header() {
 
             {/* navigations */}
 
-            <div className="navigations flex flex__align__center gap__40 font__weight__600">
+            <div className="navigations flex flex__align__center gap__40 font__weight__600 desktop">
 
                 <li id='nav' className='flex flex__align__center current' data-navigation = 'home'>
                   <a className='dark  font__12 text__trend letter__spacing__2' href="/home">Home</a>
@@ -95,39 +110,8 @@ export default function Header() {
 
                 </li>
 
-                {/* Hospitals */}
-
-                {/* <li id='nav' className='flex flex__align__center pin drop' data-navigation = 'hospitals' >
-                  <a className='dark  font__12 text__trend letter__spacing__2'> Hospitals <div className="icon"><NavArrowDown/></div> </a>
-
-                  <div className="dropdown flex gap__20">
-
-                    <div className="photo__in"><img src="https://img.freepik.com/free-photo/closeup-african-american-specialist-doctor-with-stethoscope-working-medical-treatment-hospital-office-practitioner-man-analyzing-pharmaceutical-prescription-report-healthcare-service_482257-28696.jpg?t=st=1728584809~exp=1728588409~hmac=4197674e5c20fa1b54cb4778645c5ff045613dfbf30ea644fef8f7630d3dedc2&w=2000" alt="" /></div>
-
-                    <div className="ui__list">
-                      <a href='/about/vision' className="list"> 
-                        <p> Tertiary Hospitals</p>
-                        <span>Get to Know who we are, What we do, our goals and our organizational Structure.</span>
-                      </a>
-
-                      <a className="list" href='/about/responsibilities'> 
-                        <p> Secondary Hospitals </p>
-                        <span>Mandates, duties, and functions assigned to government officials in this ministry.</span>
-                      </a>
-
-                      <a className="list"> 
-                        <p> Primary Hospitals (PHC) </p>
-                        <span>Strategic leaders driving vision, growth, and organizational success.</span>
-                      </a>
-                      
-                    </div>
-
-                  </div>
-
-                </li> */}
-
                 <li id='nav' className='flex flex__align__center' data-navigation = 'newsroom'>
-                  <a className='dark  font__12 text__trend letter__spacing__2' href="/newsroom"> Newsroom </a>
+                  <a className='dark  font__12 text__trend letter__spacing__2' href="/newsroom/1"> Newsroom </a>
                 </li>
 
                 <li id='nav' className='flex flex__align__center' data-navigation = 'resources'>
@@ -135,10 +119,64 @@ export default function Header() {
                 </li>
 
                 <li id='nav' className='flex flex__align__center' data-navigation = 'connect'>
-                  <a className='dark  font__12 text__trend letter__spacing__2' href="/contact us">Connect</a>
+                  <a className='dark  font__12 text__trend letter__spacing__2' href="/connect">Connect</a>
                 </li>
 
             </div>
+
+
+
+            {/* mobile arena */}
+
+            <div className="burger mobile" onClick={()=>setShow(!show)}> <Menu/> </div>
+
+            {
+              
+              show ? 
+
+              (<div className="navigations flex flex__align__center gap__40 font__weight__600 mob">
+
+                  <li id='nav' className='flex flex__align__center' data-navigation = 'home'>
+                    <a className='dark  font__12 text__trend letter__spacing__2' href="/home"> Home </a>
+                  </li>
+                  
+                  <li id='nav' className='flex flex__align__center dropdown__sm' data-navigation = 'about'>
+
+                    <a className={ `dark  font__12 text__trend letter__spacing__2 ${isDropdown ? "drop__active" : ""}`} onClick={ () => setIsDropdown(!isDropdown) } > About </a>
+
+                    {
+                      
+                      isDropdown ? 
+
+                      <div className="drop__items">
+
+                        <a className='dark  font__12 text__trend letter__spacing__2' href="/about/vision"> Vision & Mission </a>
+                        <a className='dark  font__12 text__trend letter__spacing__2' href="/about/responsibilities"> Ministerial Mandates </a>
+                        <a className='dark  font__12 text__trend letter__spacing__2' href="/about/people"> Top Management </a>
+                        <a className='dark  font__12 text__trend letter__spacing__2' href="/about/agencies_directorates_units"> Agencies </a>
+                      
+                      </div> : null
+
+                    }
+
+
+                  </li>
+
+                  <li id='nav' className='flex flex__align__center' data-navigation = 'newsroom'>
+                    <a className='dark  font__12 text__trend letter__spacing__2' href="/newsroom/1"> Newsroom </a>
+                  </li>
+
+                  <li id='nav' className='flex flex__align__center' data-navigation = 'resources'>
+                    <a className='dark  font__12 text__trend letter__spacing__2' href="/resources"> Resources </a>
+                  </li>
+
+                  <li id='nav' className='flex flex__align__center' data-navigation = 'connect'>
+                    <a className='dark  font__12 text__trend letter__spacing__2' href="/connect">Connect</a>
+                  </li>
+
+              </div> ): null
+
+            }
 
         </Container>
 

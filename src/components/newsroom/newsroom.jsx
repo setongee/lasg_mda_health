@@ -1,84 +1,93 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import './newsroom.scss'
 import Button from '../button/Button'
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'iconoir-react'
+import { useQuery } from '@tanstack/react-query'
+import { getAllNews } from '../../api/core/news.req'
+import { convertToTitleCase, formatDate2 } from '../../middleware/middleware'
+import Container from '../container/Container'
 
 export default function Newsroom({type}) {
+    
+    const [news, setNews] = useState([])
+    const topic = "Health Services"
+    const {data, isLoading} = useQuery({
+
+        queryKey: ["newsroom", 1, topic],
+        queryFn: () => getAllNews(0, topic)
+
+    })
+
+    useEffect(() => {
+        
+       if (type === "main") {
+        
+        setNews(data?.data);
+        
+       } else {
+        const filteredArr = data?.data.filter( (res, index) => {
+            return index < 5
+           } )
+    
+           setNews(filteredArr);
+       }
+
+    }, [isLoading]);
 
   return (
 
     <div className="newsroom" id = {type} >
         
-        <div className="tag__title flex__combo__align__spacebtw">
+        <Container>
 
-            <div className="font__32 font__weight__600 blog margin__top__10"> Top Stories Now </div>
-            
-            {
-                type === 'main' ? null
-                :
-                <div className="controls flex gap__15"> 
-                    <div className="controls__btn prev cursor__pointer"> <ArrowLeft/> </div> 
-                    <div className="controls__btn next cursor__pointer"> <ArrowRight/> </div> 
+            <div className="tag__title flex__combo__align__spacebtw">
+
+                <div className="font__32 font__weight__600 blog margin__top__10"> Trending Topics </div>
+
+                {
+                    type === 'main' ? null
+                    :
+                    <div className="controls flex gap__15"> 
+                        <div className="controls__btn prev cursor__pointer"> <ArrowLeft/> </div> 
+                        <div className="controls__btn next cursor__pointer"> <ArrowRight/> </div> 
+                    </div>
+                }
+
                 </div>
-            }
 
-        </div>
+                {/* news items */}
 
-        {/* news items */}
+                <div className="news flex" id = {type}>
 
-        <div className="news flex" id = {type}>
+                {
+                    news?.length ? 
+                    news?.map( e => (
 
-            <div className="news__item">
+                        <a href={`/newsroom/view/${e._id}`}
+                        className="news__item" key = {e._id}>
 
-                <div className="photo"><img src="https://lagosministryofhealth.org/wp-content/uploads/2024/08/IMG-20240821-WA0017.jpg" alt="images" /></div>
-                <div className="content__text font__16 font__weight__600">
-                <p>Lagos State Resumes “Alaafia Eko” Medical Outreach Amidst Residents’ Jubilation</p>
-                <a href="/">Read Now <ArrowUpRight width={15}/> </a>
-                </div>
+                            <div className="photo">
+
+                                <img src={e.photo} alt="images" />
+                                
+                            </div>
+
+                            <div className="content__text font__16 font__weight__600">
+
+                            <p className="published"> { formatDate2( e.date ) } </p>
+
+                            <p> { convertToTitleCase(e.title) } </p>
+
+                            </div>
+
+                        </a>
+
+                    ) ) : null
+                }
 
             </div>
 
-            <div className="news__item">
-
-                <div className="photo"><img src="https://lagosministryofhealth.org/wp-content/uploads/2024/08/IMG-20240820-WA0016.jpg" alt="images" /></div>
-                <div className="content__text font__16 font__weight__600">
-                <p>Global Fund Boosts Lagos Healthcare With Five State-Of-The-Art Micu Ambulances</p>
-                <a href="/">Read Now <ArrowUpRight width={15}/> </a>
-                </div>
-
-            </div>
-
-            <div className="news__item">
-
-                <div className="photo"><img src="https://lagosministryofhealth.org/wp-content/uploads/2024/08/IMG-20240818-WA0014.jpg" alt="images" /></div>
-                <div className="content__text font__16 font__weight__600">
-                <p>Lagos Free Medical Outreach “Alaafia Eko” Returns</p>
-                <a href="/">Read Now <ArrowUpRight width={15}/> </a>
-                </div>
-
-            </div>
-
-            <div className="news__item">
-
-                <div className="photo"><img src="https://lagosministryofhealth.org/wp-content/uploads/2024/08/IMG-20240815-WA0003.jpg" alt="images" /></div>
-                <div className="content__text font__16 font__weight__600">
-                <p>Lagos Ship Sets Sail, Promises Enhanced Patient Care And Efficiency.</p>
-                <a href="/">Read Now <ArrowUpRight width={15}/> </a>
-                </div>
-
-            </div>
-
-            <div className="news__item">
-
-                <div className="photo"><img src="https://lagosministryofhealth.org/wp-content/uploads/2024/08/IMG-20240818-WA0014.jpg" alt="images" /></div>
-                <div className="content__text font__16 font__weight__600">
-                <p>Lagos Free Medical Outreach “Alaafia Eko” Returns</p>
-                <a href="/">Read Now <ArrowUpRight width={15}/> </a>
-                </div>
-
-            </div>
-
-        </div>
+        </Container>
 
     </div>
 

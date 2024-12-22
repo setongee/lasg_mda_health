@@ -61,7 +61,7 @@ export default function Vision() {
                   <div className="content__text">
 
                     <div className="main">Our Goal</div>
-                    <div className="tag text__trend font__12">what you aim to achieve</div>
+                    <div className="tag text__trend font__12">what we aim to achieve</div>
                     <div className="sub__text">That every Lagosian enjoys unfettered access to <span>qualitative healthcare</span> without significant <span>geographical, financial, cultural or political barriers</span></div>
 
                   </div>

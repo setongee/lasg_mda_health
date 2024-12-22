@@ -27,6 +27,12 @@
 
 }
 
+html{
+  overflow-x: clip;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
 
 @media (prefers-color-scheme: light) {
   /* :root {

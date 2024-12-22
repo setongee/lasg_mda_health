@@ -17,13 +17,15 @@ const opts = {
 };
 
 const socials = {
-    twitter : '#',
-    facebook : '#',
-    youtube : '#',
-    instagram : '#'
+
+    twitter : 'https://twitter.com/LSMOH',
+    facebook : 'https://web.facebook.com/lsmoh',
+    youtube : 'https://www.youtube.com/channel/UCZzZf_6m2Wm60fBNKp0-l3w',
+    instagram : 'https://www.instagram.com/lagoshealth/'
+
 }
 
-  return (
+return (
 
     <div className="socials__skin flex flex__column gap__30">
 

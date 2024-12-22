@@ -9,6 +9,11 @@ import Responsibilities from '../pages/about/responsibilities';
 import People from '../pages/about/people';
 import Agencies from '../pages/about/agencies';
 import News from '../pages/newsroom/news';
+import ViewNews from '../components/newsroom/view_news';
+import Resources from '../pages/resources/resources';
+import Connect from '../pages/connect/connect';
+import News_Events from '../pages/news_events/News_Events';
+import News_view from '../pages/news_events/news_view';
 
   const router = createBrowserRouter([
     {
@@ -43,7 +48,24 @@ import News from '../pages/newsroom/news';
         },
         {
           path: "newsroom",
-          element : <News/>
+          children : [
+            {
+              path : ":page",
+              element : <News_Events/>
+            },
+            {
+              path : "view/:id",
+              element : <News_view/>
+            }
+          ]
+        },
+        {
+          path : "resources",
+          element : <Resources/>
+        },
+        {
+          path : "connect",
+          element : <Connect/>
         }
       ]
     }
