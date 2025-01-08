@@ -22,7 +22,7 @@ export default function Agencies() {
 
             </div>
 
-          <div id="agency">
+        <div id="agency">
 
               <section id="directorates" className = "multi" >
 

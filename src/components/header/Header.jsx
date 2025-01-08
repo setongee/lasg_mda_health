@@ -5,6 +5,7 @@ import logo from '../../assets/logo/lasg__logo.png'
 import Button from '../button/Button'
 import { useLocation } from 'react-router-dom'
 import { FacebookTag, Instagram, Linkedin, Menu, NavArrowDown, Twitter } from 'iconoir-react'
+import bg from '../../assets/mohbg.jpg'
 
 export default function Header() {
 
@@ -81,7 +82,7 @@ export default function Header() {
 
                   <div className="dropdown flex gap__20">
 
-                    <div className="photo__in"><img src="https://img.freepik.com/free-photo/nurse-portrait-hospital_23-2150780256.jpg?t=st=1728407375~exp=1728410975~hmac=a442f13bac857e822c525d2b8c5697c45dfac63ee063bfb4230906c1bf0a6113&w=2000" alt="" /></div>
+                    <div className="photo__in"><img src={bg} alt="" /></div>
 
                     <div className="ui__list">
                       <a href='/about/vision' className="list"> 

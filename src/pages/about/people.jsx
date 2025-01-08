@@ -38,7 +38,7 @@ export default function People() {
                     <a href='#' className="pic">
 
                         <div className="pic__holder">
-                            <img src="https://ekofm897.com/wp-content/uploads/2024/07/Mrs-Olukemi-Ogunyemi.jpg" alt="" />
+                            <img src="https://lagosministryofhealth.org/wp-content/uploads/2023/12/Mrs-Olukemi-Ogunyemi.jpg" alt="" />
                         </div>
 
                         <div className="name__card">

@@ -8,6 +8,7 @@
         display: flex;
         gap: 40px;
         padding: 20px;
+        color: #131313;
 
         .doc__icon{
             width: 45px;
@@ -60,6 +61,12 @@
         border-bottom: 1px solid #eee;
         margin-bottom: 0px;
         padding-bottom: 20px;
+
+        &:hover{
+            .doc__title{
+                text-decoration: underline;
+            }
+        }
         
         &:last-child{
             border: none;
@@ -67,6 +74,7 @@
 
         .doc__title{
             line-height: 23px;
+            align-items: center;
         }
 
         .doc__icon{

@@ -6,6 +6,11 @@ import Button from '../../components/button/Button'
 import { ArrowSeparate, ArrowSeparateVertical, Download, DownloadCircle } from 'iconoir-react'
 import Footer from '../../components/footer/footerArea'
 
+//pdf
+
+import healthacc from '../../assets/pdf/Final-Report_Lagos-State-Health-Accounts-2020-2021-1v-Ubong-6-Oct-2023.pdf'
+import pdf2 from '../../assets/pdf/Volunteering-During-COVID-19-Outbreak.pdf'
+
 export default function Resources() {
   return (
 
@@ -30,83 +35,32 @@ export default function Resources() {
                     <div className="doc__action">Action</div>
                 </div>
 
-                <div className="doc doc__body">
+                <a href = {healthacc} download className="doc doc__body">
                     <div className="doc__title flex gap__10">
                         
                         <div className="doc__icon"><img src={pdf} alt="" /></div>
                         
-                        Clinical And Demographic Characteristics of COVID19 Patients in Lagos, Nigeria
+                        Sub-National Health Account
                     
                     </div>
                     <div className="doc__category">Research Work</div>
-                    <div className="doc__date">Mon, 15th January 2024</div>
+                    <div className="doc__date"> 16th January 2024 </div>
                     <div className="doc__action"> <div className="form__button flex"> <DownloadCircle/> Download </div> </div>
-                </div>
+                </a>
 
-                <div className="doc doc__body">
+                <a href = {pdf2} download className="doc doc__body">
                     <div className="doc__title flex gap__10">
                         
                         <div className="doc__icon"><img src={pdf} alt="" /></div>
                         
-                        Clinical And Demographic Characteristics of COVID19 Patients in Lagos, Nigeria
+                        Volunteering During COVID 19 Outbreak
                     
                     </div>
                     <div className="doc__category">Research Work</div>
-                    <div className="doc__date">Mon, 15th January 2024</div>
+                    <div className="doc__date"> 21st November 2022 </div>
                     <div className="doc__action"> <div className="form__button flex"> <DownloadCircle/> Download </div> </div>
-                </div>
-
-                <div className="doc doc__body">
-                    <div className="doc__title flex gap__10">
-                        
-                        <div className="doc__icon"><img src={pdf} alt="" /></div>
-                        
-                        Clinical And Demographic Characteristics of COVID19 Patients in Lagos, Nigeria
-                    
-                    </div>
-                    <div className="doc__category">Research Work</div>
-                    <div className="doc__date">Mon, 15th January 2024</div>
-                    <div className="doc__action"> <div className="form__button flex"> <DownloadCircle/> Download </div> </div>
-                </div>
-
-                <div className="doc doc__body">
-                    <div className="doc__title flex gap__10">
-                        
-                        <div className="doc__icon"><img src={pdf} alt="" /></div>
-                        
-                        Clinical And Demographic Characteristics of COVID19 Patients in Lagos, Nigeria
-                    
-                    </div>
-                    <div className="doc__category">Research Work</div>
-                    <div className="doc__date">Mon, 15th January 2024</div>
-                    <div className="doc__action"> <div className="form__button flex"> <DownloadCircle/> Download </div> </div>
-                </div>
-
-                <div className="doc doc__body">
-                    <div className="doc__title flex gap__10">
-                        
-                        <div className="doc__icon"><img src={pdf} alt="" /></div>
-                        
-                        Clinical And Demographic Characteristics of COVID19 Patients in Lagos, Nigeria
-                    
-                    </div>
-                    <div className="doc__category">Research Work</div>
-                    <div className="doc__date">Mon, 15th January 2024</div>
-                    <div className="doc__action"> <div className="form__button flex"> <DownloadCircle/> Download </div> </div>
-                </div>
-
-                <div className="doc doc__body">
-                    <div className="doc__title flex gap__10">
-                        
-                        <div className="doc__icon"><img src={pdf} alt="" /></div>
-                        
-                        Clinical And Demographic Characteristics of COVID19 Patients in Lagos, Nigeria
-                    
-                    </div>
-                    <div className="doc__category">Research Work</div>
-                    <div className="doc__date">Mon, 15th January 2024</div>
-                    <div className="doc__action"> <div className="form__button flex"> <DownloadCircle/> Download </div> </div>
-                </div>
+                </a>
+                
 
             </div>
 
