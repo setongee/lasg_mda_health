@@ -23,8 +23,10 @@ export default function App() {
   return (
     // Root Component for the Application
     <div className="mda__app">
-      <Rrs/>
-      <Header/>
+      <div className={`currentPage_${location.pathname.split('/')[1]}`}>
+        <Rrs/>
+        <Header/>
+      </div>
       <Outlet/>
     </div>
   )

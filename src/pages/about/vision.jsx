@@ -1,12 +1,24 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import './about.scss'
 import line from '../../assets/line.jpg'
 import Container from '../../components/container/Container'
 import stack from '../../assets/about.png'
 import Button from '../../components/button/Button'
 import Footer from '../../components/footer/footerArea'
+import { getAdminData } from '../../api/core/admin'
 
 export default function Vision() {
+
+  const[data, setData] = useState({})
+
+  useEffect(() => {
+
+    getAdminData("moh")
+    .then( res => setData(res[0]) )
+
+  }, []);
+
+
   return (
     <div className="about">
 
@@ -34,7 +46,7 @@ export default function Vision() {
 
                     <div className="main">Our Vision</div>
                     <div className="tag text__trend font__12">Who we are</div>
-                    <div className="sub__text">To attain excellence in health service delivery by applying best practices at all levels of care</div>
+                    <div className="sub__text"> {data?.vision} </div>
 
                   </div>
 
@@ -48,7 +60,7 @@ export default function Vision() {
 
                     <div className="main">Our Mission</div>
                     <div className="tag text__trend font__12">What we do</div>
-                    <div className="sub__text">To deliver qualitative, affordable and equitable healthcare service to the citizenry applying appropriate technology by highly motivated staff</div>
+                    <div className="sub__text">{data?.mission}</div>
 
                   </div>
 
@@ -62,7 +74,7 @@ export default function Vision() {
 
                     <div className="main">Our Goal</div>
                     <div className="tag text__trend font__12">what we aim to achieve</div>
-                    <div className="sub__text">That every Lagosian enjoys unfettered access to <span>qualitative healthcare</span> without significant <span>geographical, financial, cultural or political barriers</span></div>
+                    <div className="sub__text">{data?.goal}</div>
 
                   </div>
 

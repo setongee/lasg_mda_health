@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import Container from '../../components/container/Container'
 import '../../styles/card__ui.scss'
 import { ArrowUpRight, Cellar, City, Hospital } from 'iconoir-react'
@@ -7,8 +7,43 @@ import { ArrowUpRight, Cellar, City, Hospital } from 'iconoir-react'
 import agency from '../../assets/MDA/agency.svg'
 import dept from '../../assets/MDA/department.svg'
 import units from '../../assets/MDA/ministry.svg'
+import { getAdminData } from '../../api/core/admin'
 
 export default function Agencies() {
+
+const[data, setData] = useState({})
+
+useEffect(() => {
+
+getAdminData("moh")
+.then( res =>{
+
+    refixArr(res[0].agencies)
+
+} )
+
+}, []); 
+
+const refixArr = (q) => {
+
+    const newObj = {};
+
+    q.forEach(e => {
+        
+        if(!newObj[e.category]){
+
+            newObj[e.category] = { name : e.category, data : [] }
+
+        }
+
+        newObj[e.category].data.push(e)
+
+    });
+
+    setData(newObj);
+
+} 
+
   return (
     <div className="about__sections">
 
@@ -22,277 +57,49 @@ export default function Agencies() {
 
             </div>
 
-        <div id="agency">
+            <div id="agency">
+            
+                {
+                    Object.entries(data).map( (e, index) => (
 
-              <section id="directorates" className = "multi" >
+                        <section id={ e[0] === "department" ? "directorates" : e[0] } className = "multi" key = {index}>
 
-                  <h1>Agencies</h1>
+                            <h1> {e[0]} </h1>
 
-                  <div className="mda__card__ui flex gap__20">
+                            <div className="mda__card__ui flex gap__20">
 
-                      <div className="mda__card">
+                                {
+                                    e[1].data.map( (res, index) => (
 
-                          <div className="iconHolder">
+                                        <div className="mda__card" key = {index}>
 
-                              <div className="card__photo">
-                                  <img src = {units} />
-                              </div>
+                                            <div className="iconHolder">
 
-                          </div>
+                                                <div className="card__photo">
+                                                    <img src = {dept} />
+                                                </div>
 
-                          <div className="card__content">
-                              <p> Lagos State Science Research and Innovation Council (LASRIC) </p>
-                              <span> <Cellar/> Agency</span>
-                          </div>
+                                            </div>
 
-                      </div>
+                                            <div className="card__content">
 
-                      <div className="mda__card">
+                                            <p>{res.name}</p>
+                                            <span> <Cellar/> {e[0]} </span>
+                                                
+                                            </div>
 
-                          <div className="iconHolder">
+                                        </div>
+                                    ) )
+                                }
 
-                              <div className="card__photo">
-                                  <img src = {units} />
-                              </div>
+                            </div>
 
-                          </div>
+                        </section>
 
-                          <div className="card__content">
-                              <p> Cyber Security Advisory Council </p>
-                              <span> <Cellar/> Agency </span>
-                          </div>
-
-                      </div>
-
-                      <div className="mda__card">
-
-                          <div className="iconHolder">
-
-                              <div className="card__photo">
-                                  <img src = {units} />
-                              </div>
-
-                          </div>
-
-                          <div className="card__content">
-                              <p> Lagos State Residents Registration Agency (LASRRA) </p>
-                              <span> <Cellar/> Agency</span>
-                          </div>
-
-                      </div>
-
-                  </div>
-
-              </section>
-
-              <section id="directorates" className = "multi" >
-
-                  <h1>Departments</h1>
-
-                  <div className="mda__card__ui flex gap__20">
-
-                      <div className="mda__card">
-
-                          <div className="iconHolder">
-
-                              <div className="card__photo">
-                                  <img src = {dept} />
-                              </div>
-
-                          </div>
-
-                          <div className="card__content">
-                              <p>Administration and Human Resources [A & HR]</p>
-                              <span> <Cellar/> Departments</span>
-                          </div>
-
-                      </div>
-
-                      <div className="mda__card">
-
-                          <div className="iconHolder">
-
-                              <div className="card__photo">
-                                  <img src = {dept} />
-                              </div>
-
-                          </div>
-
-                          <div className="card__content">
-                          <p>Finance and {<br></br>} Accounts [F & A]</p>
-                          <span> <Cellar/> Directorates</span>
-                          </div>
-
-                      </div>
-
-                      <div className="mda__card">
-
-                          <div className="iconHolder">
-
-                              <div className="card__photo">
-                                  <img src = {dept} />
-                              </div>
-
-                          </div>
-
-                          <div className="card__content">
-                          <p> Information Communication Technology[ICT]</p>
-                          <span> <Cellar/> Directorates</span>
-                          </div>
-
-                      </div>
-
-                      <div className="mda__card">
-
-                          <div className="iconHolder">
-
-                              <div className="card__photo">
-                                  <img src = {dept} />
-                              </div>
-
-                          </div>
-
-                          <div className="card__content">
-                          <p>Science, Policy, Programmes and Promotion[SPPP]</p>
-                          <span> <Cellar/> Directorates</span>
-                          </div>
-
-                      </div>
-
-                      <div className="mda__card">
-
-                          <div className="iconHolder">
-
-                              <div className="card__photo">
-                                  <img src = {dept} />
-                              </div>
-
-                          </div>
-
-                          <div className="card__content">
-                          <p>Computer Services [CS]</p>
-                          <span> <Cellar/> Directorates</span>
-                          </div>
-
-                      </div>
-
-                  </div>
-
-              </section>
-
-              <section id="units" className = "multi" >
-
-                  <h1>Units</h1>
-
-                  <div className="mda__card__ui flex gap__20">
-
-                      <div className="mda__card">
-
-                          <div className="iconHolder">
-
-                              <div className="card__photo">
-                                  <img src = {agency} />
-                              </div>
-
-                          </div>
-
-                          <div className="card__content">
-                          <p>Public Affairs</p>
-                          <span> <City/> Units</span>
-                          </div>
-
-                      </div>
-
-                      <div className="mda__card">
-
-                          <div className="iconHolder">
-
-                              <div className="card__photo">
-                                  <img src = {agency} />
-                              </div>
-
-                          </div>
-
-                          <div className="card__content">
-                          <p>The Internal Audit</p>
-                          <span> <City/> Units</span>
-                          </div>
-
-                      </div>
-
-                      <div className="mda__card">
-
-                          <div className="iconHolder">
-
-                              <div className="card__photo">
-                                  <img src = {agency} />
-                              </div>
-
-                          </div>
-
-                          <div className="card__content">
-                          <p>Planning</p>
-                          <span> <City/> Units</span>
-                          </div>
-
-                      </div>
-
-                      <div className="mda__card">
-
-                          <div className="iconHolder">
-
-                              <div className="card__photo">
-                                  <img src = {agency} />
-                              </div>
-
-                          </div>
-
-                          <div className="card__content">
-                          <p>Procurement</p>
-                          <span> <City/> Units</span>
-                          </div>
-
-                      </div>
-
-                      <div className="mda__card">
-
-                          <div className="iconHolder">
-
-                              <div className="card__photo">
-                                  <img src = {agency} />
-                              </div>
-
-                          </div>
-
-                          <div className="card__content">
-                          <p>Engineering</p>
-                          <span> <City/> Units</span>
-                          </div>
-
-                      </div>
-
-                      <div className="mda__card">
-
-                          <div className="iconHolder">
-
-                              <div className="card__photo">
-                                  <img src = {agency} />
-                              </div>
-
-                          </div>
-
-                          <div className="card__content">
-                          <p>Legal</p>
-                          <span> <City/> Units</span>
-                          </div>
-
-                      </div>
-
-                  </div>
-
-              </section>
-              
-          </div>
+                    ) )
+                }
+                
+            </div>
 
         </Container>
 

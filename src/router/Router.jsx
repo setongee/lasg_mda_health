@@ -14,6 +14,7 @@ import Resources from '../pages/resources/resources';
 import Connect from '../pages/connect/connect';
 import News_Events from '../pages/news_events/News_Events';
 import News_view from '../pages/news_events/news_view';
+import Authy from '../admin/authy';
 
   const router = createBrowserRouter([
     {
@@ -66,6 +67,19 @@ import News_view from '../pages/news_events/news_view';
         {
           path : "connect",
           element : <Connect/>
+        },
+        {
+          path : "admin",
+          children : [
+            {
+              path : "",
+              element : <Authy/>
+            },
+            {
+              path : ":page",
+              element : <Authy/>
+            }
+          ]
         }
       ]
     }
