@@ -10,6 +10,7 @@ import { getAdminData } from '../api/core/admin'
 import Responsibilities from './pages/responsibilities'
 import People from './pages/people'
 import Contact from './pages/contact'
+import Resources from './pages/resources'
 
 const Dashboard = () => {
 
@@ -45,6 +46,8 @@ const Dashboard = () => {
       if(page == "agencies") return <Agency inData = {data}/>
 
       if(page == "responsibility") return <Responsibilities inData = {data}/>
+
+      if(page == "resources") return <Resources inData = {data}/>
 
       if(page == "people") return <People inData = {data}/>
 

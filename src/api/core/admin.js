@@ -1,5 +1,7 @@
 import axios from "axios"
 import { env } from "./environment";
+import { storage } from "../firebase/config";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const base_url = `${env}/directory`
 
@@ -44,6 +46,22 @@ export const uploadFile = async (data) => {
         return [];
 
     }
+
+}
+
+export const uploadDocument = async (file, name) => {
+
+    const storageRef = ref(storage, `uploads/moh/${name}`);
+
+    // 'file' comes from the Blob or File API
+    const download = await uploadBytes(storageRef, file).then((snapshot) => {
+        
+        const result = getDownloadURL(storageRef).then( url => url );
+        return result;
+
+    });
+
+    return download;
 
 }
 

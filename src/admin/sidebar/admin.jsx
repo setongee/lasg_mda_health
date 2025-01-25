@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppleShortcuts, BookStack, Building, Dashboard, LayoutLeft, Menu, Reports, SelectiveTool, Settings, SquareCursor, Tv, IconoirProvider, Cellar, WebWindowSolid, Internet, WebWindow, Edit, NetworkSolid, CardLock, ReportColumns, User } from 'iconoir-react'
+import { AppleShortcuts, BookStack, Building, Dashboard, LayoutLeft, Menu, Reports, SelectiveTool, Settings, SquareCursor, Tv, IconoirProvider, Cellar, WebWindowSolid, Internet, WebWindow, Edit, NetworkSolid, CardLock, ReportColumns, User, DocMagnifyingGlass } from 'iconoir-react'
 
 export default function Admin() {
 
@@ -25,6 +25,13 @@ export default function Admin() {
 
         <div className="icon"><Edit /></div> 
         <div className="text"> Responsibilities </div>
+        
+        </a>
+
+        <a href='/admin/resources' className="link resources"> 
+
+        <div className="icon"><DocMagnifyingGlass /></div> 
+        <div className="text"> Resources </div>
         
         </a>
 

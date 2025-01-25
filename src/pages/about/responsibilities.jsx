@@ -47,11 +47,7 @@ export default function Responsibilities() {
                         </div>
                     </div>
 
-                    <div className="mda__content" id='content'>
-                       
-
-
-                    </div>
+                    <div className="mda__content" id='content'></div>
                     
                 </div>
 
